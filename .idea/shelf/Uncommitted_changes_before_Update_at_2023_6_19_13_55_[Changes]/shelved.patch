@@ -1,0 +1,855 @@
+Index: superShortUrl/src/main/java/bigdata/ShortUrlAppcation.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package bigdata;\r\n\r\nimport bigdata.config.DomainProperties;\r\nimport bigdata.config.EsProperties;\r\nimport bigdata.config.RedisProperties;\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.EnableAutoConfiguration;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\nimport org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;\r\nimport org.springframework.boot.context.properties.EnableConfigurationProperties;\r\nimport org.springframework.cache.annotation.EnableCaching;\r\nimport org.springframework.cloud.client.discovery.EnableDiscoveryClient;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.context.annotation.ImportResource;\r\nimport org.springframework.scheduling.annotation.EnableScheduling;\r\n\r\n/**\r\n * @author CaoJiale <caojiale@bestseller.com.cn>\r\n * @Package: com.bestseller.bigdata\r\n * @ClassName: ShortUrlAppcation\r\n * @Description : ${description}\r\n **/\r\n\r\n@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})\r\n@EnableDiscoveryClient\r\n@EnableCaching\r\n@EnableScheduling\r\n@EnableConfigurationProperties({RedisProperties.class, EsProperties.class, DomainProperties.class})\r\npublic class ShortUrlAppcation {\r\n\r\n    public static void main(String[] args) {\r\n        SpringApplication.run(ShortUrlAppcation.class, args);\r\n    }\r\n\r\n    \r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/superShortUrl/src/main/java/bigdata/ShortUrlAppcation.java b/superShortUrl/src/main/java/bigdata/ShortUrlAppcation.java
+--- a/superShortUrl/src/main/java/bigdata/ShortUrlAppcation.java	(revision c94f5e3b7214ea41fe9c471eb693a2d715b79844)
++++ b/superShortUrl/src/main/java/bigdata/ShortUrlAppcation.java	(date 1685614719168)
+@@ -25,7 +25,6 @@
+ @EnableDiscoveryClient
+ @EnableCaching
+ @EnableScheduling
+-@EnableConfigurationProperties({RedisProperties.class, EsProperties.class, DomainProperties.class})
+ public class ShortUrlAppcation {
+ 
+     public static void main(String[] args) {
+Index: superShortUrl/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n  <modelVersion>4.0.0</modelVersion>\r\n\r\n  <parent>\r\n    <groupId>com.bestseller.bigdata</groupId>\r\n    <artifactId>ShortUrl</artifactId>\r\n    <version>2.0-SNAPSHOT</version>\r\n  </parent>\r\n  <groupId>com.bestseller.bigdata</groupId>\r\n  <artifactId>superShortUrl</artifactId>\r\n  <version>1.0-SNAPSHOT</version>\r\n\r\n  <properties>\r\n    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>\r\n    <java.version>1.8</java.version>\r\n    <spring-cloud.version>Finchley.SR1</spring-cloud.version>\r\n    <skipTests>true</skipTests>\r\n  </properties>\r\n\r\n  <dependencies>\r\n    <dependency>\r\n      <groupId>org.hdrhistogram</groupId>\r\n      <artifactId>HdrHistogram</artifactId>\r\n      <version>2.1.9</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>com.fasterxml</groupId>\r\n      <artifactId>classmate</artifactId>\r\n      <version>1.3.3</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>commons-codec</groupId>\r\n      <artifactId>commons-codec</artifactId>\r\n      <version>1.10</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>commons-lang</groupId>\r\n      <artifactId>commons-lang</artifactId>\r\n      <version>2.6</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>commons-logging</groupId>\r\n      <artifactId>commons-logging</artifactId>\r\n      <version>1.1.3</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.apache.commons</groupId>\r\n      <artifactId>commons-pool2</artifactId>\r\n      <version>2.4.2</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>com.alibaba</groupId>\r\n      <artifactId>fastjson</artifactId>\r\n      <version>1.1.15</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>com.squareup.okhttp</groupId>\r\n      <artifactId>okhttp</artifactId>\r\n      <version>2.5.0</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>com.squareup.okio</groupId>\r\n      <artifactId>okio</artifactId>\r\n      <version>1.6.0</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.apache.kafka</groupId>\r\n      <artifactId>kafka-clients</artifactId>\r\n      <version>0.11.0.0</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>com.qcloud</groupId>\r\n      <artifactId>cos_api</artifactId>\r\n      <version>5.6.23</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.projectlombok</groupId>\r\n      <artifactId>lombok</artifactId>\r\n      <!-- <version>1.16.16</version> -->\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.springframework.boot</groupId>\r\n      <artifactId>spring-boot-starter</artifactId>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.springframework.boot</groupId>\r\n      <artifactId>spring-boot-starter-test</artifactId>\r\n      <scope>test</scope>\r\n      <exclusions>\r\n        <exclusion>\r\n          <groupId>com.vaadin.external.google</groupId>\r\n          <artifactId>android-json</artifactId>\r\n        </exclusion>\r\n      </exclusions>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.springframework.boot</groupId>\r\n      <artifactId>spring-boot-starter-web</artifactId>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>com.alibaba</groupId>\r\n      <artifactId>fastjson</artifactId>\r\n      <version>1.1.15</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.springframework.boot</groupId>\r\n      <artifactId>spring-boot-starter-thymeleaf</artifactId>\r\n    </dependency>\r\n\r\n\r\n\r\n    <dependency>\r\n      <groupId>org.mybatis.spring.boot</groupId>\r\n      <artifactId>mybatis-spring-boot-starter</artifactId>\r\n      <version>2.1.4</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.springframework.boot</groupId>\r\n      <artifactId>spring-boot-devtools</artifactId>\r\n      <optional>true</optional>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.apache.commons</groupId>\r\n      <artifactId>commons-csv</artifactId>\r\n      <version>1.7</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>com.github.qcloudsms</groupId>\r\n      <artifactId>qcloudsms</artifactId>\r\n      <version>1.0.6</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.quartz-scheduler</groupId>\r\n      <artifactId>quartz</artifactId>\r\n      <version>2.3.0</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>commons-io</groupId>\r\n      <artifactId>commons-io</artifactId>\r\n      <version>2.4</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>com.google.code.gson</groupId>\r\n      <artifactId>gson</artifactId>\r\n      <version>2.8.5</version>\r\n      <scope>compile</scope>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>commons-httpclient</groupId>\r\n      <artifactId>commons-httpclient</artifactId>\r\n      <version>3.1</version>\r\n    </dependency>\r\n    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->\r\n    <dependency>\r\n      <groupId>com.google.code.gson</groupId>\r\n      <artifactId>gson</artifactId>\r\n      <version>2.8.0</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>com.xuxueli</groupId>\r\n      <artifactId>xxl-job-core</artifactId>\r\n      <version>2.0.2</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>commons-io</groupId>\r\n      <artifactId>commons-io</artifactId>\r\n      <version>2.4</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>com.github.qcloudsms</groupId>\r\n      <artifactId>qcloudsms</artifactId>\r\n      <version>1.0.6</version>\r\n    </dependency>\r\n    <!-- redis依赖 -->\r\n    <dependency>\r\n      <groupId>org.springframework.boot</groupId>\r\n      <artifactId>spring-boot-starter-data-redis</artifactId>\r\n    </dependency>\r\n<!--    <dependency>-->\r\n<!--      <groupId>redis.clients</groupId>-->\r\n<!--      <artifactId>jedis</artifactId>-->\r\n<!--      <version>2.9.0</version>-->\r\n<!--    </dependency>-->\r\n\r\n    <dependency>\r\n      <groupId>com.google.guava</groupId>\r\n      <artifactId>guava</artifactId>\r\n      <version>19.0</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>com.ctrip.framework.apollo</groupId>\r\n      <artifactId>apollo-client</artifactId>\r\n      <version>1.5.0</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.elasticsearch.client</groupId>\r\n      <artifactId>elasticsearch-rest-high-level-client</artifactId>\r\n      <version>6.7.0</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.apache.logging.log4j</groupId>\r\n      <artifactId>log4j-core</artifactId>\r\n      <version>2.15.0</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.apache.logging.log4j</groupId>\r\n      <artifactId>log4j-api</artifactId>\r\n      <version>2.15.0</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.elasticsearch</groupId>\r\n      <artifactId>elasticsearch</artifactId>\r\n      <version>6.7.0</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.apache.spark</groupId>\r\n      <artifactId>spark-core_2.10</artifactId>\r\n      <version>2.1.0</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.junit.jupiter</groupId>\r\n      <artifactId>junit-jupiter</artifactId>\r\n      <version>RELEASE</version>\r\n      <scope>test</scope>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.springframework.boot</groupId>\r\n      <artifactId>spring-boot-starter-data-elasticsearch</artifactId>\r\n      <version>2.0.3.RELEASE</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>org.springframework.data</groupId>\r\n      <artifactId>spring-data-elasticsearch</artifactId>\r\n      <version>3.0.9.RELEASE</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>commons-codec</groupId>\r\n      <artifactId>commons-codec</artifactId>\r\n      <version>1.15</version>\r\n    </dependency>\r\n\r\n    <dependency>\r\n      <groupId>cn.hutool</groupId>\r\n      <artifactId>hutool-all</artifactId>\r\n      <version>5.6.1</version>\r\n    </dependency>\r\n\r\n  </dependencies>\r\n\r\n\r\n  <!--<dependencyManagement>-->\r\n    <!--<dependencies>-->\r\n      <!--<dependency>-->\r\n        <!--<groupId>org.springframework.cloud</groupId>-->\r\n        <!--<artifactId>spring-cloud-dependencies</artifactId>-->\r\n        <!--<version>${spring-cloud.version}</version>-->\r\n        <!--<type>pom</type>-->\r\n        <!--<scope>import</scope>-->\r\n      <!--</dependency>-->\r\n    <!--</dependencies>-->\r\n  <!--</dependencyManagement>-->\r\n\r\n  <build>\r\n    <plugins>\r\n      <plugin>\r\n        <groupId>org.springframework.boot</groupId>\r\n        <artifactId>spring-boot-maven-plugin</artifactId>\r\n      </plugin>\r\n    </plugins>\r\n  </build>\r\n\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/superShortUrl/pom.xml b/superShortUrl/pom.xml
+--- a/superShortUrl/pom.xml	(revision c94f5e3b7214ea41fe9c471eb693a2d715b79844)
++++ b/superShortUrl/pom.xml	(date 1685614942688)
+@@ -263,6 +263,14 @@
+       <artifactId>hutool-all</artifactId>
+       <version>5.6.1</version>
+     </dependency>
++      <dependency>
++          <groupId>org.elasticsearch.client</groupId>
++          <artifactId>elasticsearch-rest-client</artifactId>
++      </dependency>
++      <dependency>
++          <groupId>org.elasticsearch.client</groupId>
++          <artifactId>elasticsearch-rest-client</artifactId>
++      </dependency>
+ 
+   </dependencies>
+ 
+Index: superShortUrl/src/main/java/bigdata/util/EsUtils.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/superShortUrl/src/main/java/bigdata/util/EsUtils.java b/superShortUrl/src/main/java/bigdata/util/EsUtils.java
+deleted file mode 100644
+--- a/superShortUrl/src/main/java/bigdata/util/EsUtils.java	(revision c94f5e3b7214ea41fe9c471eb693a2d715b79844)
++++ /dev/null	(revision c94f5e3b7214ea41fe9c471eb693a2d715b79844)
+@@ -1,802 +0,0 @@
+-package bigdata.util;
+-
+-
+-import bigdata.operator.EsBulkFailHandler;
+-import org.apache.http.HttpHost;
+-import org.apache.http.auth.AuthScope;
+-import org.apache.http.auth.UsernamePasswordCredentials;
+-import org.apache.http.client.CredentialsProvider;
+-import org.apache.http.impl.client.BasicCredentialsProvider;
+-import org.apache.http.impl.nio.client.HttpAsyncClientBuilder;
+-import org.elasticsearch.action.bulk.BulkProcessor;
+-import org.elasticsearch.action.bulk.BulkRequest;
+-import org.elasticsearch.action.bulk.BulkResponse;
+-import org.elasticsearch.action.get.GetRequest;
+-import org.elasticsearch.action.get.GetResponse;
+-import org.elasticsearch.action.index.IndexRequest;
+-import org.elasticsearch.action.index.IndexResponse;
+-import org.elasticsearch.action.search.ClearScrollRequest;
+-import org.elasticsearch.action.search.ClearScrollResponse;
+-import org.elasticsearch.client.HttpAsyncResponseConsumerFactory;
+-import org.elasticsearch.client.RequestOptions;
+-import org.elasticsearch.client.RestClient;
+-import org.elasticsearch.client.RestClientBuilder;
+-import org.elasticsearch.client.RestHighLevelClient;
+-import org.elasticsearch.common.xcontent.XContentType;
+-import org.slf4j.Logger;
+-import org.slf4j.LoggerFactory;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.beans.factory.annotation.Value;
+-import org.springframework.context.annotation.Lazy;
+-import org.springframework.stereotype.Component;
+-
+-import javax.annotation.PostConstruct;
+-import javax.annotation.PreDestroy;
+-import java.io.IOException;
+-import java.util.List;
+-import java.util.Map;
+-
+-/**
+- * @author CaoJiale <caojiale@bestseller.com.cn>
+- * @Package: com.bestseller.bigdata.util
+- * @ClassName: EsUtils
+- * @Description : ${description}
+- **/
+-
+-
+-
+-
+-@Lazy
+-@Component
+-public class EsUtils
+-{
+-    private static final Logger logger = LoggerFactory.getLogger(EsUtils.class);
+-
+-
+-    private static final String HOST_NAME_SEPARATOR = ",";
+-
+-
+-    private static final String FAIL_INDEX_KEY_SEPARATOR = "-";
+-
+-
+-    public static final String FAIL_UNIQE_KEY_SEPARATOR = "##,##";
+-
+-
+-    @Value("${es.hostname}")
+-    private String esHostNames;
+-
+-
+-    @Value("${es.port}")
+-    private Integer esPort;
+-
+-
+-    @Value("${es.node.name}")
+-    private String esNodeName;
+-
+-
+-    @Value("${es.bulk.action.size}")
+-    private Integer esBulkActionSize;
+-
+-
+-    @Value("${es.bulk.size.mb}")
+-    private Integer esBulkSizeMb;
+-
+-
+-    @Value("${es.bulk.flush.interval.seconds}")
+-    private Integer esFlushInterval;
+-
+-//    @Value("${es.hostname}")
+-//    private  String esHostName;
+-
+-//    @Value("${es.username}")
+-//    private  String esUserName;
+-//
+-//
+-//    @Value("${user.password}")
+-//    private  String esPassWord;
+-
+-
+-
+-    @Autowired
+-    private RedisClient redisClient;
+-
+-    @Autowired
+-    private EsBulkFailHandler bulkFailHandler;
+-
+-    private RestHighLevelClient restHighLevelClient;
+-
+-    private BulkProcessor bulkProcessor;
+-    private static  RequestOptions COMMON_OPTIONS;
+-
+-
+-    public static Integer SHORT_URL_REDIS_EXPIRE = Integer.valueOf(86400000);
+-    static {
+-        RequestOptions.Builder builder = RequestOptions.DEFAULT.toBuilder();
+-
+-        // 默认缓存限制为100MB，此处修改为30MB。
+-        builder.setHttpAsyncResponseConsumerFactory(
+-                new HttpAsyncResponseConsumerFactory
+-                        .HeapBufferedResponseConsumerFactory(30 * 1024 * 1024));
+-        COMMON_OPTIONS = builder.build();
+-    }
+-
+-    @PostConstruct
+-    public RestHighLevelClient initRestClient() {
+-        // 阿里云ES集群需要basic auth验证。
+-        final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+-        //访问用户名和密码为您创建阿里云Elasticsearch实例时设置的用户名和密码，也是Kibana控制台的登录用户名和密码。
+-//        credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(this.esUserName, this.esPassWord));
+-
+-        // 通过builder创建rest client，配置http client的HttpClientConfigCallback。
+-        // 单击所创建的Elasticsearch实例ID，在基本信息页面获取公网地址，即为ES集群地址。
+-
+-        RestClientBuilder builder = RestClient.builder(new HttpHost(this.esHostNames,this.esPort))
+-                .setHttpClientConfigCallback(new RestClientBuilder.HttpClientConfigCallback() {
+-                    @Override
+-                    public HttpAsyncClientBuilder customizeHttpClient(HttpAsyncClientBuilder httpClientBuilder) {
+-                        return httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+-                    }
+-                });
+-
+-
+-        // RestHighLevelClient实例通过REST low-level client builder进行构造。
+-        RestHighLevelClient highClient = new RestHighLevelClient(builder);
+-
+-//        if (this.restHighLevelClient == null) {
+-//            String[] esHostArr = this.esHostNames.split(",");
+-//            HttpHost[] httpHosts = new HttpHost[esHostArr.length];
+-//            for (int i = 0; i < esHostArr.length; i++) {
+-//                httpHosts[i] = new HttpHost(esHostArr[i], this.esPort.intValue(), "http");
+-//            }
+-//            this.restHighLevelClient = RestClient.builder(httpHosts).build();
+-//        }
+-//        initBulkProcessor();
+-//        logger.info("es rest client init success");
+-//        return this.restHighLevelClient;
+-        return highClient;
+-    }
+-
+-
+-    public boolean index(String id, String source) {
+-        RestHighLevelClient client = this.restHighLevelClient;
+-        IndexRequest request = new IndexRequest(id);
+-        request.source(source, XContentType.JSON);
+-        try {
+-            IndexResponse response = client.index(request, new org.apache.http.Header[0]);
+-            Integer status = Integer.valueOf(203);
+-            if (response.status().getStatus() > status.intValue()) {
+-                logger.warn("id: {}, source: {}, index return status: {}", new Object[]{id, source, Integer.valueOf(response.status().getStatus())});
+-                return false;
+-            }
+-        } catch (IOException e) {
+-            logger.error("id: {}, source: {}, index has exception: ", new Object[]{id, source, e});
+-            return false;
+-        }
+-        return true;
+-    }
+-
+-
+-    public boolean index(String index, String type, String id, String source) {
+-        RestHighLevelClient client = this.restHighLevelClient;
+-        IndexRequest request = new IndexRequest(index, type, id);
+-        request.source(source, XContentType.JSON);
+-        try {
+-            IndexResponse response = client.index(request, new org.apache.http.Header[0]);
+-            Integer status = Integer.valueOf(203);
+-            if (response.status().getStatus() > status.intValue()) {
+-                logger.warn("index: {}, type: {}, id: {}, source: {}, index return status: {}", new Object[]{index, type, id, source,
+-                        Integer.valueOf(response.status().getStatus())});
+-                return false;
+-            }
+-        } catch (IOException e) {
+-            logger.error("index: {}, type: {}, id: {}, source: {}, index has exception: ", new Object[]{index, type, id, source, e});
+-            return false;
+-        }
+-        return true;
+-    }
+-
+-
+-    public boolean batchIndex(IndexRequest indexRequest) {
+-        RestHighLevelClient client = initRestClient();
+-        System.out.println("client:"+client);
+-        BulkRequest bulkRequest = new BulkRequest();
+-        try {
+-            IndexResponse indexResponse = client.index(indexRequest, RequestOptions.DEFAULT);
+-//            BulkResponse bulkItemResponses = client.bulk(bulkRequest.add(indexRequest), COMMON_OPTIONS);
+-            System.out.println("Index document successfully! " + indexResponse.getVersion());
+-            client.close();
+-        } catch (IOException e) {
+-            logger.error("bulkRequest: {}, index has exception: ", indexRequest.toString(), e);
+-            return false;
+-        }
+-
+-        return true;
+-    }
+-
+-    public boolean batchIndex(List<IndexRequest> requests) {
+-        RestHighLevelClient client = initRestClient();
+-        BulkRequest bulkRequest = new BulkRequest();
+-        for (IndexRequest indexRequest : requests) {
+-            bulkRequest.add(indexRequest);
+-        }
+-        try {
+-            client.bulk(bulkRequest, RequestOptions.DEFAULT);
+-            if (null != client){
+-                client.close();
+-            }
+-            client.close();
+-        } catch (IOException e) {
+-            logger.error("bulkRequest: {}, index has exception: ", requests.toString(), e);
+-            return false;
+-        }
+-        return true;
+-    }
+-
+-
+-    public String getById(String id) {
+-        RestHighLevelClient client = this.restHighLevelClient;
+-        GetRequest getRequest = new GetRequest(id);
+-        try {
+-            GetResponse getFields = client.get(getRequest, new org.apache.http.Header[0]);
+-            return getFields.getSourceAsString();
+-        } catch (IOException e) {
+-            logger.error("id: {}, get has exception: ", id, e);
+-
+-            return "";
+-        }
+-    }
+-
+-
+-    public String getById(String index, String type, String id) {
+-        RestHighLevelClient client = this.restHighLevelClient;
+-        GetRequest getRequest = new GetRequest(index, type, id);
+-        try {
+-            GetResponse getFields = client.get(getRequest, new org.apache.http.Header[0]);
+-            return getFields.getSourceAsString();
+-        } catch (IOException e) {
+-            logger.error("index: {}, type: {}, id: {}, get has exception: ", new Object[]{index, type, id, e});
+-
+-            return "";
+-        }
+-    }
+-
+-
+-    public boolean shortUrlEsScrollRedis(int total, Long timeStamp) throws Exception {
+-        boolean flag = true;
+-        for (int i = 0; i < total; i++) {
+-            boolean result = shortUrlEsScrollRedisEach(i, timeStamp);
+-            if (!result) {
+-                logger.error("searchScroll es index:{} failed", "mkt-shortenerrecord-" + i);
+-                flag = false;
+-            }
+-        }
+-        return flag;
+-    }
+-
+-//    private void clearEsScroll(MktRestHighLevelClient client, String scrollId) {
+-//        ClearScrollResponse clearScrollResponse;
+-//        ClearScrollRequest clearScrollRequest = new ClearScrollRequest();
+-//        clearScrollRequest.addScrollId(scrollId);
+-//
+-//        try {
+-//            clearScrollResponse = client.clearScroll(clearScrollRequest, new org.apache.http.Header[0]);
+-//        } catch (IOException e) {
+-//            logger.error("clear scroll es failed, IOException: ", e);
+-//            return;
+-//        }
+-//        if (!clearScrollResponse.isSucceeded()) {
+-//            logger.error("clear scroll es failed");
+-//        }
+-//    }
+-
+-
+-    public boolean shortUrlDelete(int total, Long timeStamp) throws Exception {
+-        boolean flag = true;
+-        for (int i = 0; i < total; i++) {
+-            boolean result = shortUrlDeleteEach(i, timeStamp);
+-            if (!result) {
+-                logger.error("es shortUrlDelete index:{} failed", "mkt-shortenerrecord-" + i);
+-                flag = false;
+-            }
+-        }
+-        return flag;
+-    }
+-
+-
+-    private boolean shortUrlDeleteEach(int i, Long timeStamp) throws Exception { // Byte code:
+-        //   0: getstatic com/talkingdata/marketing/shortener/util/EsUtils.logger : Lorg/slf4j/Logger;
+-        //   3: ldc 'shortUrlDelete es hash index:{}'
+-        //   5: iload_1
+-        //   6: invokestatic valueOf : (I)Ljava/lang/Integer;
+-        //   9: invokeinterface info : (Ljava/lang/String;Ljava/lang/Object;)V
+-        //   14: new org/elasticsearch/search/Scroll
+-        //   17: dup
+-        //   18: ldc2_w 10
+-        //   21: invokestatic timeValueMinutes : (J)Lorg/elasticsearch/common/unit/TimeValue;
+-        //   24: invokespecial <init> : (Lorg/elasticsearch/common/unit/TimeValue;)V
+-        //   27: astore_3
+-        //   28: new org/elasticsearch/action/search/SearchRequest
+-        //   31: dup
+-        //   32: iconst_1
+-        //   33: anewarray java/lang/String
+-        //   36: dup
+-        //   37: iconst_0
+-        //   38: new java/lang/StringBuilder
+-        //   41: dup
+-        //   42: invokespecial <init> : ()V
+-        //   45: ldc 'mkt-shortenerrecord-'
+-        //   47: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+-        //   50: iload_1
+-        //   51: invokevirtual append : (I)Ljava/lang/StringBuilder;
+-        //   54: invokevirtual toString : ()Ljava/lang/String;
+-        //   57: aastore
+-        //   58: invokespecial <init> : ([Ljava/lang/String;)V
+-        //   61: astore #4
+-        //   63: aload #4
+-        //   65: iconst_1
+-        //   66: anewarray java/lang/String
+-        //   69: dup
+-        //   70: iconst_0
+-        //   71: ldc 'shortenerrecord'
+-        //   73: aastore
+-        //   74: invokevirtual types : ([Ljava/lang/String;)Lorg/elasticsearch/action/search/SearchRequest;
+-        //   77: pop
+-        //   78: aload #4
+-        //   80: aload_3
+-        //   81: invokevirtual scroll : (Lorg/elasticsearch/search/Scroll;)Lorg/elasticsearch/action/search/SearchRequest;
+-        //   84: pop
+-        //   85: new org/elasticsearch/search/builder/SearchSourceBuilder
+-        //   88: dup
+-        //   89: invokespecial <init> : ()V
+-        //   92: astore #5
+-        //   94: aload #5
+-        //   96: invokevirtual query : ()Lorg/elasticsearch/index/query/QueryBuilder;
+-        //   99: pop
+-        //   100: aload #5
+-        //   102: sipush #10000
+-        //   105: invokevirtual size : (I)Lorg/elasticsearch/search/builder/SearchSourceBuilder;
+-        //   108: pop
+-        //   109: aload #4
+-        //   111: aload #5
+-        //   113: invokevirtual source : (Lorg/elasticsearch/search/builder/SearchSourceBuilder;)Lorg/elasticsearch/action/search/SearchRequest;
+-        //   116: pop
+-        //   117: new com/talkingdata/marketing/shortener/es/MktRestHighLevelClient
+-        //   120: dup
+-        //   121: aload_0
+-        //   122: getfield restHighLevelClient : Lorg/elasticsearch/client/RestClient;
+-        //   125: invokespecial <init> : (Lorg/elasticsearch/client/RestClient;)V
+-        //   128: astore #6
+-        //   130: aload #6
+-        //   132: aload #4
+-        //   134: iconst_0
+-        //   135: anewarray org/apache/http/Header
+-        //   138: invokevirtual search : (Lorg/elasticsearch/action/search/SearchRequest;[Lorg/apache/http/Header;)Lorg/elasticsearch/action/search/SearchResponse;
+-        //   141: astore #7
+-        //   143: goto -> 162
+-        //   146: astore #8
+-        //   148: getstatic com/talkingdata/marketing/shortener/util/EsUtils.logger : Lorg/slf4j/Logger;
+-        //   151: ldc 'es shortUrlDelete search failed, Exception: '
+-        //   153: aload #8
+-        //   155: invokeinterface error : (Ljava/lang/String;Ljava/lang/Throwable;)V
+-        //   160: iconst_0
+-        //   161: ireturn
+-        //   162: aload #7
+-        //   164: invokevirtual getScrollId : ()Ljava/lang/String;
+-        //   167: astore #8
+-        //   169: aload #7
+-        //   171: invokevirtual getHits : ()Lorg/elasticsearch/search/SearchHits;
+-        //   174: invokevirtual getHits : ()[Lorg/elasticsearch/search/SearchHit;
+-        //   177: astore #9
+-        //   179: new com/talkingdata/marketing/shortener/util/EsUtils$1
+-        //   182: dup
+-        //   183: aload_0
+-        //   184: invokespecial <init> : (Lcom/talkingdata/marketing/shortener/util/EsUtils;)V
+-        //   187: astore #10
+-        //   189: lconst_0
+-        //   190: lstore #11
+-        //   192: aload #9
+-        //   194: ifnull -> 397
+-        //   197: aload #9
+-        //   199: arraylength
+-        //   200: ifle -> 397
+-        //   203: aload #9
+-        //   205: astore #13
+-        //   207: aload #13
+-        //   209: arraylength
+-        //   210: istore #14
+-        //   212: iconst_0
+-        //   213: istore #15
+-        //   215: iload #15
+-        //   217: iload #14
+-        //   219: if_icmpge -> 334
+-        //   222: aload #13
+-        //   224: iload #15
+-        //   226: aaload
+-        //   227: astore #16
+-        //   229: new com/talkingdata/marketing/shortener/model/RealUrlValue
+-        //   232: dup
+-        //   233: invokespecial <init> : ()V
+-        //   236: astore #17
+-        //   238: aload #16
+-        //   240: invokevirtual getSource : ()Ljava/util/Map;
+-        //   243: aload #17
+-        //   245: invokestatic transMap2Bean : (Ljava/util/Map;Ljava/lang/Object;)V
+-        //   248: aload #17
+-        //   250: invokevirtual getTimeStamp : ()Ljava/lang/Long;
+-        //   253: astore #18
+-        //   255: aconst_null
+-        //   256: aload #18
+-        //   258: if_acmpeq -> 274
+-        //   261: aload #18
+-        //   263: invokevirtual longValue : ()J
+-        //   266: aload_2
+-        //   267: invokevirtual longValue : ()J
+-        //   270: lcmp
+-        //   271: ifge -> 328
+-        //   274: new org/elasticsearch/action/delete/DeleteRequest
+-        //   277: dup
+-        //   278: new java/lang/StringBuilder
+-        //   281: dup
+-        //   282: invokespecial <init> : ()V
+-        //   285: ldc 'mkt-shortenerrecord-'
+-        //   287: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+-        //   290: iload_1
+-        //   291: invokevirtual append : (I)Ljava/lang/StringBuilder;
+-        //   294: invokevirtual toString : ()Ljava/lang/String;
+-        //   297: ldc 'shortenerrecord'
+-        //   299: aload #16
+-        //   301: invokevirtual getId : ()Ljava/lang/String;
+-        //   304: invokespecial <init> : (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+-        //   307: astore #19
+-        //   309: aload #6
+-        //   311: aload #19
+-        //   313: aload #10
+-        //   315: iconst_0
+-        //   316: anewarray org/apache/http/Header
+-        //   319: invokevirtual deleteAsync : (Lorg/elasticsearch/action/delete/DeleteRequest;Lorg/elasticsearch/action/ActionListener;[Lorg/apache/http/Header;)V
+-        //   322: lload #11
+-        //   324: lconst_1
+-        //   325: ladd
+-        //   326: lstore #11
+-        //   328: iinc #15, 1
+-        //   331: goto -> 215
+-        //   334: new org/elasticsearch/action/search/SearchScrollRequest
+-        //   337: dup
+-        //   338: aload #8
+-        //   340: invokespecial <init> : (Ljava/lang/String;)V
+-        //   343: astore #13
+-        //   345: aload #13
+-        //   347: aload_3
+-        //   348: invokevirtual scroll : (Lorg/elasticsearch/search/Scroll;)Lorg/elasticsearch/action/search/SearchScrollRequest;
+-        //   351: pop
+-        //   352: aload #6
+-        //   354: aload #13
+-        //   356: iconst_0
+-        //   357: anewarray org/apache/http/Header
+-        //   360: invokevirtual searchScroll : (Lorg/elasticsearch/action/search/SearchScrollRequest;[Lorg/apache/http/Header;)Lorg/elasticsearch/action/search/SearchResponse;
+-        //   363: astore #7
+-        //   365: goto -> 384
+-        //   368: astore #14
+-        //   370: getstatic com/talkingdata/marketing/shortener/util/EsUtils.logger : Lorg/slf4j/Logger;
+-        //   373: ldc 'es shortUrlDelete failed, Exception: '
+-        //   375: aload #14
+-        //   377: invokeinterface error : (Ljava/lang/String;Ljava/lang/Throwable;)V
+-        //   382: iconst_0
+-        //   383: ireturn
+-        //   384: aload #7
+-        //   386: invokevirtual getHits : ()Lorg/elasticsearch/search/SearchHits;
+-        //   389: invokevirtual getHits : ()[Lorg/elasticsearch/search/SearchHit;
+-        //   392: astore #9
+-        //   394: goto -> 192
+-        //   397: getstatic com/talkingdata/marketing/shortener/util/EsUtils.logger : Lorg/slf4j/Logger;
+-        //   400: ldc 'es shortUrlDelete total count: {}'
+-        //   402: lload #11
+-        //   404: invokestatic valueOf : (J)Ljava/lang/Long;
+-        //   407: invokeinterface info : (Ljava/lang/String;Ljava/lang/Object;)V
+-        //   412: aload_0
+-        //   413: aload #6
+-        //   415: aload #8
+-        //   417: invokespecial clearEsScroll : (Lcom/talkingdata/marketing/shortener/es/MktRestHighLevelClient;Ljava/lang/String;)V
+-        //   420: iconst_1
+-        //   421: ireturn
+-        // Line number table:
+-        //   Java source line number -> byte code offset
+-        //   #360	-> 0
+-        //   #362	-> 14
+-        //   #363	-> 28
+-        //   #364	-> 63
+-        //   #365	-> 78
+-        //   #366	-> 85
+-        //   #367	-> 94
+-        //   #369	-> 100
+-        //   #370	-> 109
+-        //   #372	-> 117
+-        //   #376	-> 130
+-        //   #380	-> 143
+-        //   #377	-> 146
+-        //   #378	-> 148
+-        //   #379	-> 160
+-        //   #381	-> 162
+-        //   #382	-> 169
+-        //   #385	-> 179
+-        //   #410	-> 189
+-        //   #411	-> 192
+-        //   #414	-> 203
+-        //   #415	-> 229
+-        //   #416	-> 238
+-        //   #417	-> 248
+-        //   #419	-> 255
+-        //   #420	-> 274
+-        //   #421	-> 301
+-        //   #422	-> 309
+-        //   #423	-> 322
+-        //   #414	-> 328
+-        //   #428	-> 334
+-        //   #429	-> 345
+-        //   #431	-> 352
+-        //   #435	-> 365
+-        //   #432	-> 368
+-        //   #433	-> 370
+-        //   #434	-> 382
+-        //   #436	-> 384
+-        //   #437	-> 394
+-        //   #439	-> 397
+-        //   #441	-> 412
+-        //   #442	-> 420
+-        // Local variable table:
+-        //   start	length	slot	name	descriptor
+-        //   143	3	7	searchResponse	Lorg/elasticsearch/action/search/SearchResponse;
+-        //   148	14	8	e	Ljava/io/IOException;
+-        //   309	19	19	deleteRequest	Lorg/elasticsearch/action/delete/DeleteRequest;
+-        //   238	90	17	realUrlValue	Lcom/talkingdata/marketing/shortener/model/RealUrlValue;
+-        //   255	73	18	time	Ljava/lang/Long;
+-        //   229	99	16	searchHit	Lorg/elasticsearch/search/SearchHit;
+-        //   370	14	14	e	Ljava/lang/Exception;
+-        //   345	49	13	scrollRequest	Lorg/elasticsearch/action/search/SearchScrollRequest;
+-        //   0	422	0	this	Lcom/talkingdata/marketing/shortener/util/EsUtils;
+-        //   0	422	1	i	I
+-        //   0	422	2	timeStamp	Ljava/lang/Long;
+-        //   28	394	3	scroll	Lorg/elasticsearch/search/Scroll;
+-        //   63	359	4	searchRequest	Lorg/elasticsearch/action/search/SearchRequest;
+-        //   94	328	5	searchSourceBuilder	Lorg/elasticsearch/search/builder/SearchSourceBuilder;
+-        //   130	292	6	client	Lcom/talkingdata/marketing/shortener/es/MktRestHighLevelClient;
+-        //   162	260	7	searchResponse	Lorg/elasticsearch/action/search/SearchResponse;
+-        //   169	253	8	scrollId	Ljava/lang/String;
+-        //   179	243	9	searchHits	[Lorg/elasticsearch/search/SearchHit;
+-        //   189	233	10	listener	Lorg/elasticsearch/action/ActionListener;
+-        //   192	230	11	count	J
+-        // Local variable type table:
+-        //   start	length	slot	name	signature
+-        //   189	233	10	listener	Lorg/elasticsearch/action/ActionListener<Lorg/elasticsearch/action/delete/DeleteResponse;>;
+-        // Exception table:
+-        //   from	to	target	type
+-        //   130	143	146	java/io/IOException
+-        //   352	365	368	java/lang/Exception
+-        return false;
+-    }
+-
+-
+-    public void bulk(String index, String type, String id, String source) {
+-        IndexRequest request = new IndexRequest(index, type, id);
+-        request.source(source, XContentType.JSON);
+-        this.bulkProcessor.add(request);
+-    }
+-
+-    @PreDestroy
+-    public void close() {
+-        if (this.restHighLevelClient != null) {
+-            try {
+-                this.restHighLevelClient.close();
+-                logger.info("es rest client close success");
+-            } catch (IOException e) {
+-                logger.error("close es rest client has IOException: ", e);
+-            }
+-        }
+-    }
+-
+-
+-    private void initBulkProcessor() {
+-//        RestHighLevelClient client = new RestHighLevelClient(this.restHighLevelClient);
+-//        Map<String, String> map = new HashMap<String, String>(2);
+-//        map.put("node.name", this.esNodeName);
+-//        Settings settings = Settings.builder().put(map).build();
+-//        ThreadPool threadPool = new ThreadPool(settings, new org.elasticsearch.threadpool.ExecutorBuilder[0]);
+-//        BulkProcessor.Builder builder = new BulkProcessor.Builder((x$0, x$1) -> rec$.bulkAsync(x$0, x$1, new org.apache.http.Header[0]), new BulkProcessor.Listener(this) {
+-//            public void beforeBulk(long executionId, BulkRequest request) {
+-//                logger.info("es bulk batch executionId: {} start ", Long.valueOf(executionId));
+-//            }
+-//
+-//
+-//            public void afterBulk(long executionId, BulkRequest request, BulkResponse response) {
+-//                logger.info("es bulk batch executionId: {} end ", Long.valueOf(executionId));
+-//                if (response.hasFailures()) {
+-//                    Map<String, String> data = EsUtils.this.handleFailures(request, response);
+-//                    logger.error("es bulk batch executionId: {} end, has failures, failures size: {}", Long.valueOf(executionId), Integer.valueOf(data.size()));
+-//                    EsUtils.this.bulkFailHandler.bulkFailHandler(data);
+-//                }
+-//            }
+-//
+-//
+-//            public void afterBulk(long executionId, BulkRequest request, Throwable failure) {
+-//                logger.error("es bulk batch executionId: {} has exception ", Long.valueOf(executionId), failure);
+-//                Map<String, String> data = EsUtils.this.handleFailures(request, null);
+-//                logger.error("es bulk batch executionId: {} end, exception, failures size: {}", Long.valueOf(executionId), Integer.valueOf(data.size()));
+-//                EsUtils.this.bulkFailHandler.bulkFailHandler(data);
+-//            }
+-//        });
+-//
+-//        builder.setBulkActions(this.esBulkActionSize.intValue());
+-//
+-//        builder.setBulkSize(new ByteSizeValue(this.esBulkSizeMb.intValue(), ByteSizeUnit.MB));
+-//        builder.setFlushInterval(TimeValue.timeValueSeconds(this.esFlushInterval.intValue()));
+-//        this.bulkProcessor = builder.build();
+-    }
+-
+-    private Map<String, String> handleFailures(BulkRequest request, BulkResponse response) { // Byte code:
+-        //   0: new java/util/ArrayList
+-        //   3: dup
+-        //   4: invokespecial <init> : ()V
+-        //   7: astore_3
+-        //   8: aload_2
+-        //   9: ifnull -> 102
+-        //   12: aload_2
+-        //   13: invokevirtual getItems : ()[Lorg/elasticsearch/action/bulk/BulkItemResponse;
+-        //   16: astore #5
+-        //   18: aload #5
+-        //   20: astore #6
+-        //   22: aload #6
+-        //   24: arraylength
+-        //   25: istore #7
+-        //   27: iconst_0
+-        //   28: istore #8
+-        //   30: iload #8
+-        //   32: iload #7
+-        //   34: if_icmpge -> 84
+-        //   37: aload #6
+-        //   39: iload #8
+-        //   41: aaload
+-        //   42: astore #9
+-        //   44: aload #9
+-        //   46: invokevirtual isFailed : ()Z
+-        //   49: ifeq -> 78
+-        //   52: aload_3
+-        //   53: aload_0
+-        //   54: aload #9
+-        //   56: invokevirtual getIndex : ()Ljava/lang/String;
+-        //   59: aload #9
+-        //   61: invokevirtual getType : ()Ljava/lang/String;
+-        //   64: aload #9
+-        //   66: invokevirtual getId : ()Ljava/lang/String;
+-        //   69: invokespecial indexKey : (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+-        //   72: invokeinterface add : (Ljava/lang/Object;)Z
+-        //   77: pop
+-        //   78: iinc #8, 1
+-        //   81: goto -> 30
+-        //   84: new java/util/HashMap
+-        //   87: dup
+-        //   88: aload_3
+-        //   89: invokeinterface size : ()I
+-        //   94: invokespecial <init> : (I)V
+-        //   97: astore #4
+-        //   99: goto -> 120
+-        //   102: new java/util/HashMap
+-        //   105: dup
+-        //   106: aload_1
+-        //   107: invokevirtual requests : ()Ljava/util/List;
+-        //   110: invokeinterface size : ()I
+-        //   115: invokespecial <init> : (I)V
+-        //   118: astore #4
+-        //   120: aload_1
+-        //   121: invokevirtual requests : ()Ljava/util/List;
+-        //   124: astore #5
+-        //   126: aload #5
+-        //   128: invokeinterface iterator : ()Ljava/util/Iterator;
+-        //   133: astore #7
+-        //   135: aload #7
+-        //   137: invokeinterface hasNext : ()Z
+-        //   142: ifeq -> 271
+-        //   145: aload #7
+-        //   147: invokeinterface next : ()Ljava/lang/Object;
+-        //   152: checkcast org/elasticsearch/action/DocWriteRequest
+-        //   155: astore #8
+-        //   157: aload #8
+-        //   159: instanceof org/elasticsearch/action/index/IndexRequest
+-        //   162: ifeq -> 268
+-        //   165: aload #8
+-        //   167: checkcast org/elasticsearch/action/index/IndexRequest
+-        //   170: astore #6
+-        //   172: aload_2
+-        //   173: ifnull -> 204
+-        //   176: aload_3
+-        //   177: aload_0
+-        //   178: aload #6
+-        //   180: invokevirtual index : ()Ljava/lang/String;
+-        //   183: aload #6
+-        //   185: invokevirtual type : ()Ljava/lang/String;
+-        //   188: aload #6
+-        //   190: invokevirtual id : ()Ljava/lang/String;
+-        //   193: invokespecial indexKey : (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+-        //   196: invokeinterface contains : (Ljava/lang/Object;)Z
+-        //   201: ifeq -> 268
+-        //   204: new java/lang/StringBuilder
+-        //   207: dup
+-        //   208: invokespecial <init> : ()V
+-        //   211: aload #6
+-        //   213: invokevirtual index : ()Ljava/lang/String;
+-        //   216: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+-        //   219: ldc '-'
+-        //   221: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+-        //   224: aload #6
+-        //   226: invokevirtual type : ()Ljava/lang/String;
+-        //   229: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+-        //   232: ldc '##,##'
+-        //   234: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+-        //   237: aload #6
+-        //   239: invokevirtual id : ()Ljava/lang/String;
+-        //   242: invokevirtual append : (Ljava/lang/String;)Ljava/lang/StringBuilder;
+-        //   245: invokevirtual toString : ()Ljava/lang/String;
+-        //   248: astore #9
+-        //   250: aload #4
+-        //   252: aload #9
+-        //   254: aload #6
+-        //   256: invokevirtual source : ()Lorg/elasticsearch/common/bytes/BytesReference;
+-        //   259: invokevirtual utf8ToString : ()Ljava/lang/String;
+-        //   262: invokeinterface put : (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+-        //   267: pop
+-        //   268: goto -> 135
+-        //   271: aload #4
+-        //   273: areturn
+-        // Line number table:
+-        //   Java source line number -> byte code offset
+-        //   #520	-> 0
+-        //   #522	-> 8
+-        //   #523	-> 12
+-        //   #524	-> 18
+-        //   #525	-> 44
+-        //   #526	-> 52
+-        //   #524	-> 78
+-        //   #529	-> 84
+-        //   #530	-> 99
+-        //   #531	-> 102
+-        //   #533	-> 120
+-        //   #535	-> 126
+-        //   #536	-> 157
+-        //   #537	-> 165
+-        //   #538	-> 172
+-        //   #539	-> 204
+-        //   #540	-> 250
+-        //   #543	-> 268
+-        //   #544	-> 271
+-        // Local variable table:
+-        //   start	length	slot	name	descriptor
+-        //   44	34	9	item	Lorg/elasticsearch/action/bulk/BulkItemResponse;
+-        //   18	81	5	items	[Lorg/elasticsearch/action/bulk/BulkItemResponse;
+-        //   99	3	4	data	Ljava/util/Map;
+-        //   250	18	9	key	Ljava/lang/String;
+-        //   172	96	6	indexRequest	Lorg/elasticsearch/action/index/IndexRequest;
+-        //   157	111	8	docWriteRequest	Lorg/elasticsearch/action/DocWriteRequest;
+-        //   0	274	0	this	Lcom/talkingdata/marketing/shortener/util/EsUtils;
+-        //   0	274	1	request	Lorg/elasticsearch/action/bulk/BulkRequest;
+-        //   0	274	2	response	Lorg/elasticsearch/action/bulk/BulkResponse;
+-        //   8	266	3	failKey	Ljava/util/List;
+-        //   120	154	4	data	Ljava/util/Map;
+-        //   126	148	5	bulkRequest	Ljava/util/List;
+-        // Local variable type table:
+-        //   start	length	slot	name	signature
+-        //   99	3	4	data	Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;
+-        //   8	266	3	failKey	Ljava/util/List<Ljava/lang/String;>;
+-        //   120	154	4	data	Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;
+-        //   126	148	5	bulkRequest	Ljava/util/List<Lorg/elasticsearch/action/DocWriteRequest;>;
+-        return null;
+-    }
+-
+-
+-    private String indexKey(String index, String type, String id) {
+-        return index + "-" + type + "-" + id;
+-    }
+-
+-    private boolean shortUrlEsScrollRedisEach(int i, Long timeStamp) throws Exception {
+-
+-        return false;
+-    }
+-}

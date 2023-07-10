@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a52236eb-255a-4e3b-9498-9c8184db58a6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/logs/2023-04-14/debug.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2023-04-14/error.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2023-04-14/info.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2023-04-14/trace.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2023-04-14/warn.0.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="githubmaster" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\repository\shortUrl" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../maven/apache-maven-3.5.2-bin/apache-maven-3.5.2" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.5.2-bin\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2OJAB2zN1t8j8ZoSFM36t410YrU" />
+  <component name="ProjectViewState">
+    <option name="foldersAlwaysOnTop" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelOrder2": "2",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RequestMappingsPanelWidth2": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "D:/project/ShortUrl/shortToLongUrl/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "81e6fd0a6efaef8dec72c598a78483b0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\ShortUrl\shortToLongUrl\src\main\resources" />
+      <recent name="D:\project\ShortUrl\superShortUrl" />
+      <recent name="D:\project\ShortUrl\superShortUrl\src\main\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="bigdata.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="bigdata.util" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ShortToLongUrlApplication">
+    <configuration name="ShortUrlServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bigdata.service.impl.ShortUrlServiceImpl" />
+      <module name="superShortUrl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bigdata.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShortUrlUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bigdata.util.ShortUrlUtil" />
+      <module name="superShortUrl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bigdata.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShortToLongUrlApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="shortToLongUrl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bestseller.bigdata.ShortToLongUrlApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bestseller.bigdata.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShortUrlAppcation (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="superShortUrl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="bigdata.ShortUrlAppcation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShortUrlAppcation" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="superShortURL" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="bigdata.ShortUrlAppcation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bigdata.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ShortUrlServiceImpl" />
+      <item itemvalue="Application.ShortUrlUtil" />
+      <item itemvalue="Spring Boot.ShortUrlAppcation (1)" />
+      <item itemvalue="Spring Boot.ShortToLongUrlApplication" />
+      <item itemvalue="Spring Boot.ShortUrlAppcation" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ShortUrlAppcation" />
+        <item itemvalue="Spring Boot.ShortToLongUrlApplication" />
+        <item itemvalue="Application.ShortUrlUtil" />
+        <item itemvalue="Application.ShortUrlServiceImpl" />
+        <item itemvalue="Spring Boot.ShortUrlAppcation" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a52236eb-255a-4e3b-9498-9c8184db58a6" name="Changes" comment="" />
+      <created>1681268177723</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681268177723</updated>
+      <workItem from="1681268181701" duration="130000" />
+      <workItem from="1681268365868" duration="599000" />
+      <workItem from="1681270777889" duration="598000" />
+      <workItem from="1681271530815" duration="129000" />
+      <workItem from="1681271777543" duration="5062000" />
+      <workItem from="1681287338873" duration="598000" />
+      <workItem from="1681354163093" duration="2562000" />
+      <workItem from="1681437921491" duration="1780000" />
+      <workItem from="1681439717425" duration="3011000" />
+      <workItem from="1681442740703" duration="941000" />
+      <workItem from="1681443694860" duration="316000" />
+      <workItem from="1681444023653" duration="494000" />
+      <workItem from="1681444527743" duration="287000" />
+      <workItem from="1681444826406" duration="3381000" />
+      <workItem from="1681454999620" duration="836000" />
+      <workItem from="1681456154541" duration="344000" />
+      <workItem from="1681456507651" duration="7242000" />
+      <workItem from="1681464277990" duration="2304000" />
+      <workItem from="1681695670754" duration="2044000" />
+      <workItem from="1682331851835" duration="1208000" />
+      <workItem from="1682387068868" duration="3923000" />
+      <workItem from="1682501090352" duration="5657000" />
+      <workItem from="1682652845054" duration="1098000" />
+      <workItem from="1683356635488" duration="6106000" />
+      <workItem from="1683538160002" duration="23513000" />
+      <workItem from="1683707263967" duration="3383000" />
+      <workItem from="1685518423689" duration="3915000" />
+      <workItem from="1685601742124" duration="1674000" />
+      <workItem from="1685608633979" duration="555000" />
+      <workItem from="1685609200085" duration="7143000" />
+      <workItem from="1687142250456" duration="617000" />
+      <workItem from="1687243818275" duration="1838000" />
+      <workItem from="1687657250136" duration="6150000" />
+      <workItem from="1687848764805" duration="1464000" />
+      <workItem from="1687854694861" duration="7457000" />
+      <workItem from="1688006066143" duration="2692000" />
+      <workItem from="1688027618005" duration="1527000" />
+      <workItem from="1688352342484" duration="4214000" />
+      <workItem from="1688548701747" duration="14774000" />
+    </task>
+    <task id="LOCAL-00001" summary="1.集成nacos配置中心和注册中心&#10;2.解决冲突maven冲突包">
+      <created>1681458296773</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681458296773</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1.集成nacos配置中心和注册中心&#10;2.解决冲突maven冲突包">
+      <created>1681459233850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681459233850</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1.集成nacos配置中心和注册中心&#10;2.解决冲突maven冲突包">
+      <created>1681460268738</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681460268738</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1.ali es修改为服务器es">
+      <created>1681461880089</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681461880089</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1.ali es修改为服务器es">
+      <created>1681462125816</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681462125816</updated>
+    </task>
+    <task id="LOCAL-00006" summary="1.ali es修改为服务器es">
+      <created>1681463305196</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681463305196</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1.短链代码上传">
+      <created>1685614032599</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685614032599</updated>
+    </task>
+    <task id="LOCAL-00008" summary="1.修改短链跳转请求方式">
+      <created>1688006458135</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688006458135</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1.CRM集成短链服务">
+      <created>1688551529470</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688551529470</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1.短链跳转logback&#10;2.短链跳转日志补充&#10;3.短链跳转redis过期时间配置文件配置和随机算法&#10;4.短链转换redis过期随机算法&#10;5.短链转换日志补充">
+      <created>1688614271134</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1688614271134</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1.集成nacos配置中心和注册中心&#10;2.解决冲突maven冲突包" />
+    <MESSAGE value="1.ali es修改为服务器es" />
+    <MESSAGE value="1.短链代码上传" />
+    <MESSAGE value="1.修改短链跳转请求方式" />
+    <MESSAGE value="1.CRM集成短链服务" />
+    <MESSAGE value="1.短链跳转logback&#10;2.短链跳转日志补充&#10;3.短链跳转redis过期时间配置文件配置和随机算法&#10;4.短链转换redis过期随机算法&#10;5.短链转换日志补充" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.短链跳转logback&#10;2.短链跳转日志补充&#10;3.短链跳转redis过期时间配置文件配置和随机算法&#10;4.短链转换redis过期随机算法&#10;5.短链转换日志补充" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/superShortUrl/src/main/java/bigdata/controller/ShortUrlConvert.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/superShortUrl/src/main/java/bigdata/service/impl/ShortUrlServiceImpl.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/superShortUrl/src/main/java/bigdata/controller/ShortUrlController.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
